@@ -1,6 +1,5 @@
 <?php
-require_once 'abstract_machine_class.php';
-class train extends machine {
+class Train extends AbstractMachine {
     public $toplivo = 30;
     public $range = 250;
     public $people = 100;

@@ -1,6 +1,9 @@
 <?php
-require_once 'abstract_machine_class.php';
-class auto extends machine {
+//namespace TransportCompany\Machine;
+//use TransportCompany\AbstractMachine;
+
+class Auto extends AbstractMachine
+{
     public $toplivo = 10;
     public $range = 250;
     public $people = 4;
@@ -9,5 +12,4 @@ class auto extends machine {
     public $money = 30;
     public $activ;
 }
-
 

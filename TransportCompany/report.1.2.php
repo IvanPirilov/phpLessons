@@ -1,54 +1,53 @@
 <?php
+require_once 'bootstrap.php';
 
-require_once 'fabrika.php';
-$track = new track;
-$moto = new moto;
-$train = new train;
-$helicopter = new helicopter;
-$auto = new auto;
-$moto->activ = rand(1, moto::$machine);
-$track->activ = rand(1, track::$machine);
-$train->activ = rand(1, train::$machine);
-$helicopter->activ = rand(1, helicopter::$machine);
-$auto->activ = rand(1, auto::$machine);
+$Track = new Track;
+$Fabrika = new Fabrika;
+$Moto = new Moto;
+$Train = new Train;
+$Helicopter = new Helicopter;
+$Auto = new Auto;
+$Fabrika->getPark();
+/*
 $result =[];
-$result['track']['fuel'] = $track->toplivo;
-$result['track']['range'] = $track->range;
-$result['track']['passenger'] = $track->people;
-$result['track']['personal'] = $track->personal;
-$result['track']['money'] = $track->money*$track->activ*$track->people." dolors";
-$result['track']['active machine'] = $track->activ;
-$result['moto']['fuel'] = $moto->toplivo;
-$result['moto']['range'] = $moto->range;
-$result['moto']['passenger'] = $moto->people;
-$result['moto']['personal'] = $moto->personal;
-$result['moto']['money'] = $moto->money*$moto->activ*$track->people." dolors";
-$result['moto']['active machine'] = $moto->activ;
-$result['train']['fuel'] = $train->toplivo;
-$result['train']['range'] = $train->range;
-$result['train']['passenger'] = $train->people;
-$result['train']['personal'] = $train->personal;
-$result['train']['money'] = $train->money*$train->activ*$track->people." dolors";
-$result['train']['active machine'] = $moto->activ;
-$result['helicopter']['fuel'] = $helicopter->toplivo;
-$result['helicopter']['range'] = $helicopter->range;
-$result['helicopter']['passenger'] = $helicopter->people;
-$result['helicopter']['personal'] = $helicopter->personal;
-$result['helicopter']['money'] = $helicopter->money*$helicopter->activ*$track->people." dolors";
-$result['helicopter']['active machine'] = $helicopter->activ;
-$result['auto']['fuel'] = $auto->toplivo;
-$result['auto']['range'] = $auto->range;
-$result['auto']['passenger'] = $auto->people;
-$result['auto']['personal'] = $auto->personal;
-$result['auto']['money'] = $auto->money*$auto->activ*$track->people." dolors";
-$result['auto']['active machine'] = $auto->activ;
+$result['track']['fuel'] = $Track->toplivo;
+$result['track']['range'] = $Track->range;
+$result['track']['passenger'] = $Track->people;
+$result['track']['personal'] = $Track->personal;
+$result['track']['money'] = $Track->money*$Track->activ*$Track->people." dolors";
+$result['track']['active machine'] = $Track->activ;
+$result['moto']['fuel'] = $Moto->toplivo;
+$result['moto']['range'] = $Moto->range;
+$result['moto']['passenger'] = $Moto->people;
+$result['moto']['personal'] = $Moto->personal;
+$result['moto']['money'] = $Moto->money*$Moto->activ*$Track->people." dolors";
+$result['moto']['active machine'] = $Moto->activ;
+$result['train']['fuel'] = $Train->toplivo;
+$result['train']['range'] = $Train->range;
+$result['train']['passenger'] = $Train->people;
+$result['train']['personal'] = $Train->personal;
+$result['train']['money'] = $Train->money*$Train->activ*$Track->people." dolors";
+$result['train']['active machine'] = $Moto->activ;
+$result['helicopter']['fuel'] = $Helicopter->toplivo;
+$result['helicopter']['range'] = $Helicopter->range;
+$result['helicopter']['passenger'] = $Helicopter->people;
+$result['helicopter']['personal'] = $Helicopter->personal;
+$result['helicopter']['money'] = $Helicopter->money*$Helicopter->activ*$Track->people." dolors";
+$result['helicopter']['active machine'] = $Helicopter->activ;
+$result['auto']['fuel'] = $Auto->toplivo;
+$result['auto']['range'] = $Auto->range;
+$result['auto']['passenger'] = $Auto->people;
+$result['auto']['personal'] = $Auto->personal;
+$result['auto']['money'] = $Auto->money*$Auto->activ*$Track->people." dolors";
+$result['auto']['active machine'] = $Auto->activ;
 
-$content = fopen('result.csv', 'r+');
-foreach ($result as $fields) {
-    fputcsv($content, $fields);
-}
-$re = fgetcsv($content);
 print_r($result);
-
-
-
+*/
+$Moto->activ = count(Fabrika::$active['moto']);
+$Track->activ = count(Fabrika::$active['track']);
+$Train->activ = count(Fabrika::$active['train']);
+$Helicopter->activ = count(Fabrika::$active['helicopter']);
+$Auto->activ = count(Fabrika::$active['auto']);
+print_r(Fabrika::$active);
+echo '<hr>';
+print_r(Fabrika::$park);

@@ -1,6 +1,8 @@
 <?php
-require_once 'abstract_machine_class.php';
-class helicopter extends machine {
+//namespace TransportCompany\Machine;
+//use TransportCompany\AbstractMachine;
+
+class Helicopter extends AbstractMachine {
     public $toplivo = 2;
     public $range = 300;
     public $people = 8;

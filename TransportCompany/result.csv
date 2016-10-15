@@ -1,9 +1,112 @@
-20,500,15,2,"16500 dolors",44
-2,150,1,1,"900 dolors",3
-30,250,100,15,"2250 dolors",3
-2,300,8,2,"3750 dolors",5
-10,250,4,1,"9450 dolors",21
+<?php
+abstract class AbstractMachine {
+    public static $report = [];
+    function __construct() {
+        $report[get_class($this)][$this->range] = $this->range;
+        $report[get_class($this)][$this->people] = $this->people;
+        $report[get_class($this)][$this->machine] = $this->machine;
+        $report[get_class($this)][$this->personal] = $this->personal;
+        $report[get_class($this)][$this->money] = $this->money*$this->people*$this->activ;
+        $report[get_class($this)][$this->toplivo] = $this->toplivo;
+    }
 
+    public $range;
+    public $people;
+    public static $machine;
+    public $personal;
+    public $money;
+    public $toplivo;
+    public $activ;
+}
+class Moto extends Machine {
+    public $toplivo = 2;
+    public $range = 150;
+    public $people = 1;
+    public $personal = 1;
+    public static $machine = 10;
+    public $money = 20;
+    public $activ;
+}
+class Track extends Machine {
+    public $toplivo = 20;
+    public $range = 500;
+    public $people = 15;
+    public $personal = 2;
+    public static $machine = 80;
+    public $activ;
+    public $money = 25;
+}
+class Train extends Machine {
+    public $toplivo = 30;
+    public $range = 250;
+    public $people = 100;
+    public $personal = 15;
+    public static $machine = 10;
+    public $money = 15;
+    public $activ;
+}
+class Helicopter extends AbstractMachine {
+    public $toplivo = 2;
+    public $range = 300;
+    public $people = 8;
+    public $personal = 2;
+    public static $machine = 10;
+    public $money = 50;
+    public $activ;
+}
+class Auto extends AbstractMachine {
+    public $toplivo = 10;
+    public $range = 250;
+    public $people = 4;
+    public $personal = 1;
+    public static $machine = 30;
+    public $money = 30;
+    public $activ;
+}
 
+$Track = new Track;
+$Moto = new Moto;
+$Train = new Train;
+$Helicopter = new Helicopter;
+$Auto = new Auto;
+$Moto->activ = rand(1, Moto::$machine);
+$Track->activ = rand(1, Track::$machine);
+$Train->activ = rand(1, Train::$machine);
+$Helicopter->activ = rand(1, Helicopter::$machine);
+$Auto->activ = rand(1, Auto::$machine);
+/*
+$result =[];
+$result['track']['fuel'] = $Track->toplivo;
+$result['track']['range'] = $Track->range;
+$result['track']['passenger'] = $Track->people;
+$result['track']['personal'] = $Track->personal;
+$result['track']['money'] = $Track->money*$Track->activ*$Track->people." dolors";
+$result['track']['active machine'] = $Track->activ;
+$result['moto']['fuel'] = $Moto->toplivo;
+$result['moto']['range'] = $Moto->range;
+$result['moto']['passenger'] = $Moto->people;
+$result['moto']['personal'] = $Moto->personal;
+$result['moto']['money'] = $Moto->money*$Moto->activ*$Track->people." dolors";
+$result['moto']['active machine'] = $Moto->activ;
+$result['train']['fuel'] = $Train->toplivo;
+$result['train']['range'] = $Train->range;
+$result['train']['passenger'] = $Train->people;
+$result['train']['personal'] = $Train->personal;
+$result['train']['money'] = $Train->money*$Train->activ*$Track->people." dolors";
+$result['train']['active machine'] = $Moto->activ;
+$result['helicopter']['fuel'] = $Helicopter->toplivo;
+$result['helicopter']['range'] = $Helicopter->range;
+$result['helicopter']['passenger'] = $Helicopter->people;
+$result['helicopter']['personal'] = $Helicopter->personal;
+$result['helicopter']['money'] = $Helicopter->money*$Helicopter->activ*$Track->people." dolors";
+$result['helicopter']['active machine'] = $Helicopter->activ;
+$result['auto']['fuel'] = $Auto->toplivo;
+$result['auto']['range'] = $Auto->range;
+$result['auto']['passenger'] = $Auto->people;
+$result['auto']['personal'] = $Auto->personal;
+$result['auto']['money'] = $Auto->money*$Auto->activ*$Track->people." dolors";
+$result['auto']['active machine'] = $Auto->activ;
 
+*/
 
+print_r(AbstractMachine::$result);

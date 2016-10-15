@@ -1,6 +1,7 @@
 <?php
-require_once 'abstract_machine_class.php';
-class track extends machine {
+//namespace TransportCompany;
+//use TransportCompany\AbstractMachine;
+class Track extends AbstractMachine {
     public $toplivo = 20;
     public $range = 500;
     public $people = 15;

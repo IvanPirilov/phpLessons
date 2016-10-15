@@ -1,6 +1,7 @@
 <?php
-require_once 'abstract_machine_class.php';
-class moto extends machine {
+//namespace TransportCompany;
+//use TransportCompany\AbstractMachine;
+class Moto extends AbstractMachine {
     public $toplivo = 2;
     public $range = 150;
     public $people = 1;
