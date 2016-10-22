@@ -4,12 +4,11 @@
 
 class Auto extends AbstractMachine
 {
-    public $toplivo = 10;
-    public $range = 250;
-    public $people = 4;
-    public $personal = 1;
+    protected $fuel = 10;
+    protected $range = 250;
+    protected $people = 4;
+    protected $personal = 1;
     public static $machine = 30;
-    public $money = 30;
-    public $activ;
+    protected $money = 30;
 }
 
