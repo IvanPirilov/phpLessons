@@ -2,7 +2,7 @@
 //namespace TransportCompany;
 //use TransportCompany\AbstractMachine;
 class Moto extends AbstractMachine {
-    protected $fuel = 2;
+    public $fuel = 2;
     protected $range = 150;
     protected $people = 1;
     protected $personal = 1;

@@ -1,6 +1,6 @@
 <?php
 class Train extends AbstractMachine {
-    protected $fuel = 30;
+    public $fuel = 30;
     protected $range = 250;
     protected $people = 100;
     protected $personal = 15;

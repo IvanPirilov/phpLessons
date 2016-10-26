@@ -4,7 +4,7 @@
 
 class Auto extends AbstractMachine
 {
-    protected $fuel = 10;
+    public $fuel = 10;
     protected $range = 250;
     protected $people = 4;
     protected $personal = 1;

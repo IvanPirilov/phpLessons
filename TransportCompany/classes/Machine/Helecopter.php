@@ -3,7 +3,7 @@
 //use TransportCompany\AbstractMachine;
 
 class Helicopter extends AbstractMachine {
-    protected $fuel = 2;
+    public $fuel = 2;
     protected $range = 300;
     protected $people = 8;
     protected $personal = 2;

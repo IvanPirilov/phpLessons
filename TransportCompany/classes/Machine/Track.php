@@ -2,7 +2,7 @@
 //namespace TransportCompany;
 //use TransportCompany\AbstractMachine;
 class Track extends AbstractMachine {
-    protected $fuel = 20;
+    public $fuel = 20;
     protected $range = 500;
     protected $people = 15;
     protected $personal = 2;
