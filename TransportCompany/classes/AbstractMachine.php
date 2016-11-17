@@ -1,7 +1,7 @@
 <?php
-//namespace TransportCompany;
+namespace TransportCompany;
 /*
- * <?php
+ * <?php$result[$type][$fuelType] = $item->getFuel()*$result[$type]['active'];
 require_once 'bootstrap.php';
 $park = Fabrika::getPark();
 $result =[] ;
@@ -23,6 +23,7 @@ abstract class AbstractMachine {
     protected $personal;
     protected $money;
     protected $fuel;
+    protected $fuelType;
     public function getRange() {
         return $this->range;
     }
@@ -37,6 +38,9 @@ abstract class AbstractMachine {
     }
     public function getPeople() {
         return $this->people;
+    }
+    public function getFuelType() {
+        return $this->fuelType;
     }
 
 }

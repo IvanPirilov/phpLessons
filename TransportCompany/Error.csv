@@ -1,0 +1,6 @@
+name,active,kilometers,people,personal,money,gas,wood,diesel,avia_fuel
+moto,4,8,600,4,4,80,0,0,0
+train,5,150,1250,75,500,75,0,0,0
+track,11,220,5500,22,165,275,0,0,0
+auto,5,50,1250,5,20,150,0,0,0
+helicopter,2,4,600,4,16,100,0,0,0

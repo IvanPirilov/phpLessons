@@ -1,0 +1,7 @@
+name,active,range,personal,people,money,gas,wood,diesel,avia_fuel
+moto,3,450,3,3,60,6,0,0,0
+train,6,1500,90,600,90,0,180,0,0
+track,7,3500,14,105,175,0,0,140,0
+auto,6,1500,6,24,180,60,0,0,0
+helicopter,2,600,4,16,100,0,0,0,4
+Total,24,7550,117,748,605,66,180,140,4

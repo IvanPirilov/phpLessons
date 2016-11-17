@@ -1,4 +1,5 @@
 <?php
+namespace TransportCompany;
 class Fabrika  {
     
     protected static $park= [];
@@ -9,8 +10,9 @@ class Fabrika  {
     protected static function generatePark()
     {
         foreach (self::$availableTypes as $type) {
-            for($i=1;$i<=rand(1, $type::$machine);$i++) {
-                self::$park[strtolower($type)][] =  new $type();
+            $className = __NAMESPACE__.'\\Machine\\'.$type;
+            for($i=1;$i<=rand(1, $className::$machine);$i++) {
+                self::$park[strtolower($type)][] =  new $className();
 
             }
         }

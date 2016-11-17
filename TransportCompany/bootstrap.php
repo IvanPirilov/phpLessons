@@ -1,4 +1,7 @@
 <?php
+
+
+
 require_once 'classes/AbstractMachine.php';
 require_once 'classes/Fabrika.php';
 require_once 'classes/Machine/Auto.php';

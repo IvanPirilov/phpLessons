@@ -1,6 +1,6 @@
 <?php
-//namespace TransportCompany\Machine;
-//use TransportCompany\AbstractMachine;
+namespace TransportCompany\Machine;
+use TransportCompany\AbstractMachine;
 
 class Auto extends AbstractMachine
 {
@@ -10,5 +10,6 @@ class Auto extends AbstractMachine
     protected $personal = 1;
     public static $machine = 30;
     protected $money = 30;
+    protected $fuelType = 'gas';
 }
 
