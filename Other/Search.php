@@ -3,29 +3,29 @@ $array = [1,5, 23 ,26, 43, 65, 78, 99, 101];
 echo 'This is your ';
 print_r($array);
 echo '<br>';
-$x = $_POST['step'];
+$searchedNumb = $_POST['step'];
 $steps = 0;
 $result = 0;
-$r = count($array);
-$l = 0;
-if(isset($x)) {
-    while ($r - $l > 1) {
-        $m = ($r + $l) / 2;
-        if ($x < $array[$m]) {
-            $r = $m;
+$right= count($array);
+$left = 0;
+if(isset($searchedNumb)) {
+    while ($right- $left > 1) {
+        $middle = ($right+ $left) / 2;
+        if ($searchedNumb < $array[$middle]) {
+            $right= $middle;
             $steps++;
         }
-        elseif ($x > $array[$m]) {
-            $l = $m;
+        elseif ($searchedNumb > $array[$middle]) {
+            $left = $middle;
             $steps++;
         }
         else {
-            $result = $m;
+            $result = $middle;
             $steps++;
             break;
         }
     }
-    if ($array[$result] == $x) {
+    if ($array[$result] == $searchedNumb) {
         echo $array[$result];
         echo '<br>';
         echo 'php find it in ' . $steps . ' steps';
